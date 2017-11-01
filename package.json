@@ -1,16 +1,12 @@
 {
   "name": "chainsql-binary-codec",
-  "version": "1.0",
+  "version": "0.1.21",
   "description": "chainsql binary codec",
   "files": [
-    "distrib/npm/*",
-    "bin/*",
+    "src/*",
     "test/*"
   ],
-  "main": "distrib/npm/",
-  "directories": {
-    "test": "test"
-  },
+  "main": "src/",
   "dependencies": {
     "babel-runtime": "^6.6.1",
     "bn.js": "^4.11.3",
@@ -34,13 +30,6 @@
     "intercept-stdout": "^0.1.2",
     "istanbul": "~0.4.3",
     "mocha": "~2.4.5"
-  },
-  "scripts": {
-    "compile": "babel --optional runtime -d distrib/npm/ src/ && cp src/enums/definitions.json distrib/npm/enums",
-    "prepublish": "npm test && npm run lint && npm run compile",
-    "test": "istanbul test _mocha",
-    "codecov": "cat ./coverage/coverage.json | ./node_modules/codecov.io/bin/codecov.io.js",
-    "lint": "if ! [ -f eslintrc ]; then curl -o eslintrc 'https://raw.githubusercontent.com/ripple/javascript-style-guide/es6/eslintrc'; echo 'parser: babel-eslint' >> eslintrc; fi; eslint -c eslintrc src/**/*.js test/*.js examples/*.js"
   },
   "repository": {
     "type": "git",
