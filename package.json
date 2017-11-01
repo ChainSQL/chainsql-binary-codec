@@ -1,7 +1,7 @@
 {
-  "name": "ripple-binary-codec",
-  "version": "0.1.11",
-  "description": "ripple binary codec",
+  "name": "chainsql-binary-codec",
+  "version": "1.0",
+  "description": "chainsql binary codec",
   "files": [
     "distrib/npm/*",
     "bin/*",

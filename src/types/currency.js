@@ -7,7 +7,7 @@ const HEX_REGEX = /^[A-F0-9]{40}$/;
 
 function isoToBytes(iso) {
   const bytes = new Uint8Array(20);
-  if (iso !== 'XRP') {
+  if (iso !== 'ZXC') {
     const isoBytes = iso.split('').map(c => c.charCodeAt(0));
     bytes.set(isoBytes, 12);
   }
@@ -75,9 +75,9 @@ const Currency = makeClass({
         break;
       }
     }
-    const lossLessISO = onlyISO && iso !== 'XRP' && ISO_REGEX.test(iso);
+    const lossLessISO = onlyISO && iso !== 'ZXC' && ISO_REGEX.test(iso);
     this._isNative = onlyISO && _.isEqual(code, [0, 0, 0]);
-    this._iso = this._isNative ? 'XRP' : lossLessISO ? iso : null;
+    this._iso = this._isNative ? 'ZXC' : lossLessISO ? iso : null;
   },
   toJSON() {
     if (this.iso()) {
