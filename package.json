@@ -1,6 +1,6 @@
 {
   "name": "chainsql-binary-codec",
-  "version": "0.1.12",
+  "version": "0.1.23",
   "description": "chainsql binary codec",
   "files": [
     "distrib/npm/*",
@@ -8,9 +8,6 @@
     "test/*"
   ],
   "main": "distrib/npm/",
-  "directories": {
-    "test": "test"
-  },
   "dependencies": {
     "babel-runtime": "^6.6.1",
     "bn.js": "^4.11.3",
@@ -38,7 +35,8 @@
   "scripts": {
     "compile": "babel --optional runtime -d distrib/npm/ src/ && cp src/enums/definitions.json distrib/npm/enums",
     "prepublish": "npm run compile",
-    "codecov": "cat ./coverage/coverage.json | ./node_modules/codecov.io/bin/codecov.io.js"
+    "codecov": "cat ./coverage/coverage.json | ./node_modules/codecov.io/bin/codecov.io.js",
+    "lint": "if ! [ -f eslintrc ]; then curl -o eslintrc 'https://raw.githubusercontent.com/ripple/javascript-style-guide/es6/eslintrc'; echo 'parser: babel-eslint' >> eslintrc; fi; eslint -c eslintrc src/**/*.js test/*.js examples/*.js"
   },
   "repository": {
     "type": "git",
