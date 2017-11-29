@@ -28,7 +28,7 @@ Decimal.config({
 });
 
 const AMOUNT_PARAMETERS_DESCRIPTION = `
-Native values must be described in drops, a million of which equal one XRP.
+Native values must be described in drops, a million of which equal one ZXC.
 This must be an integer number, with the absolute value not exceeding \
 ${MAX_NETWORK_DROPS}
 
@@ -60,7 +60,7 @@ const parsers = {
     if (!str.match(/\d+/)) {
       raiseIllegalAmountError(str);
     }
-    return [new Decimal(str).dividedBy(DROPS_PER_XRP), Currency.XRP];
+    return [new Decimal(str).dividedBy(DROPS_PER_XRP), Currency.ZXC];
   },
   object(object) {
     assert(isDefined(object.currency), 'currency must be defined');
@@ -74,7 +74,7 @@ const parsers = {
 const Amount = makeClass({
   Amount(value, currency, issuer) {
     this.value = value || new Decimal('0');
-    this.currency = currency || Currency.XRP;
+    this.currency = currency || Currency.ZXC;
     this.issuer = issuer || null;
     this.assertValueIsValid();
   },
@@ -114,7 +114,7 @@ const Amount = makeClass({
       mantissa[0] &= 0x3F;
       const drops = new Decimal(`${sign}0x${bytesToHex(mantissa)}`);
       const xrpValue = drops.dividedBy(DROPS_PER_XRP);
-      return new this(xrpValue, Currency.XRP);
+      return new this(xrpValue, Currency.ZXC);
     }
   },
   assertValueIsValid() {
@@ -123,7 +123,7 @@ const Amount = makeClass({
       if (this.isNative()) {
         const abs = this.value.abs();
         if (abs.lt(MIN_XRP) || abs.gt(MAX_XRP)) {
-          // value is in XRP scale, but show the value in canonical json form
+          // value is in ZXC scale, but show the value in canonical json form
           raiseIllegalAmountError(this.value.times(DROPS_PER_XRP))
         }
       } else {

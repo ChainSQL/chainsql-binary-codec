@@ -46,8 +46,8 @@ describe('Currency', function() {
     assert.equal(bad.isNative(), false);
   });
   it('can be constructed from an Array', function() {
-    const xrp = Currency.from(new Uint8Array(20));
-    assert.equal(xrp.iso(), 'ZXC');
+    const zxc = Currency.from(new Uint8Array(20));
+    assert.equal(zxc.iso(), 'ZXC');
   });
   it('throws on invalid reprs', function() {
     assert.throws(() => Currency.from(new Uint8Array(19)));

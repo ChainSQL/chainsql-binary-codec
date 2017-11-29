@@ -49,7 +49,7 @@ const Currency = makeClass({
   getters: ['isNative', 'iso'],
   statics: {
     init() {
-      this.XRP = new this(new Uint8Array(20));
+      this.ZXC = new this(new Uint8Array(20));
     },
     from(val) {
       return val instanceof this ? val : new this(bytesFromRepr(val));
