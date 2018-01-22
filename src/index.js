@@ -40,6 +40,11 @@ function encodeForSigning(json) {
   return bytesToHex(signingData(json));
 }
 
+function encodeForSigningByte(json) {
+  assert(typeof json === 'object');
+  return signingData(json);
+}
+
 function encodeForSigningClaim(json) {
   assert(typeof json === 'object');
   return bytesToHex(signingClaimData(json));
@@ -49,6 +54,12 @@ function encodeForMultisigning(json, signer) {
   assert(typeof json === 'object');
   assert.equal(json.SigningPubKey, '');
   return bytesToHex(multiSigningData(json, signer));
+}
+
+function encodeForMultiSigningByte(json,signer){
+  assert(typeof json === 'object');
+  assert.equal(json.SigningPubKey, '');
+  return multiSigningData(json, signer);
 }
 
 function encodeQuality(value) {
@@ -65,8 +76,10 @@ module.exports = {
   decode,
   encode,
   encodeForSigning,
+  encodeForSigningByte,
   encodeForSigningClaim,
   encodeForMultisigning,
+  encodeForMultiSigningByte,
   encodeQuality,
   decodeQuality,
   decodeLedgerData

@@ -34,7 +34,7 @@
     "DirectoryNode": 100,
     "GeneratorMap": 103,
     "Contract": 99,
-    "PayChannel": 120,
+	"PayChannel": 120,
     "Invalid": -1
   },
   "FIELDS": [
@@ -82,6 +82,16 @@
       "SignerWeight",
       {
         "nth": 3,
+        "isVLEncoded": false,
+        "isSerialized": true,
+        "isSigningField": true,
+        "type": "UInt16"
+      }
+    ],
+    [
+      "OpType",
+      {
+        "nth": 50,
         "isVLEncoded": false,
         "isSerialized": true,
         "isSigningField": true,
@@ -212,6 +222,16 @@
       "DestinationTag",
       {
         "nth": 14,
+        "isVLEncoded": false,
+        "isSerialized": true,
+        "isSigningField": true,
+        "type": "UInt32"
+      }
+    ],
+    [
+      "NeedVerify",
+      {
+        "nth": 52,
         "isVLEncoded": false,
         "isSerialized": true,
         "isSigningField": true,
@@ -1007,7 +1027,7 @@
         "isSigningField": true,
         "type": "Blob"
       }
-    ],
+    ], 
     [
       "MasterSignature",
       {
@@ -1017,6 +1037,106 @@
         "isSigningField": false,
         "type": "Blob"
       }
+    ],  
+    [
+      "Token",
+      {
+        "nth": 50,
+        "isVLEncoded": true,
+        "isSerialized": true,
+        "isSigningField": true,
+        "type": "Blob"
+      }
+    ],
+ 	[ 
+      "TableName",
+      {
+        "nth": 51,
+        "isVLEncoded": true,
+        "isSerialized": true,
+        "isSigningField": true,
+        "type": "Blob"
+      }
+    ],
+    [
+      "Raw",
+      {
+        "nth": 52,
+        "isVLEncoded": true,
+        "isSerialized": true,
+        "isSigningField": true,
+        "type": "Blob"
+      }
+    ],
+    [
+      "TableNewName",
+      {
+        "nth": 53,
+        "isVLEncoded": true,
+        "isSerialized": true,
+        "isSigningField": true,
+        "type": "Blob"
+      }
+    ],
+    [
+      "AutoFillField",
+      {
+        "nth": 54,
+        "isVLEncoded": true,
+        "isSerialized": true,
+        "isSigningField": true,
+        "type": "Blob"
+      }
+    ],
+    [
+      "Statements",
+      {
+        "nth": 55,
+        "isVLEncoded": true,
+        "isSerialized": true,
+        "isSigningField": true,
+        "type": "Blob"
+      }
+    ],
+    [
+      "OperationRule",
+      {
+        "nth": 56,
+        "isVLEncoded": true,
+        "isSerialized": true,
+        "isSigningField": true,
+        "type": "Blob"
+      }
+    ],
+    [
+        "Fulfillment",
+        {
+            "nth": 16,
+            "isVLEncoded": true,
+            "isSerialized": true,
+            "isSigningField": true,
+            "type": "Blob"
+        }
+    ],
+    [
+        "Condition",
+        {
+            "nth": 17,
+            "isVLEncoded": true,
+            "isSerialized": true,
+            "isSigningField": true,
+            "type": "Blob"
+        }
+    ],
+    [
+        "MasterSignature",
+        {
+            "nth": 18,
+            "isVLEncoded": true,
+            "isSerialized": true,
+            "isSigningField": false,
+            "type": "Blob"
+        }
     ],
     [
       "Account",
@@ -1072,6 +1192,16 @@
       "RegularKey",
       {
         "nth": 8,
+        "isVLEncoded": true,
+        "isSerialized": true,
+        "isSigningField": true,
+        "type": "AccountID"
+      }
+    ],
+    [
+      "User",
+      {
+        "nth": 50,
         "isVLEncoded": true,
         "isSerialized": true,
         "isSigningField": true,
@@ -1188,6 +1318,16 @@
         "type": "STObject"
       }
     ],
+	[
+      "Table",
+      {
+        "nth": 50,
+        "isVLEncoded": false,
+        "isSerialized": true,
+        "isSigningField": true,
+        "type": "STObject"
+      }
+    ],
     [
       "Signer",
       {
@@ -1288,6 +1428,16 @@
         "type": "STArray"
       }
     ],
+	[
+      "Tables",
+      {
+        "nth": 51,
+        "isVLEncoded": false,
+        "isSerialized": true,
+        "isSigningField": true,
+        "type": "STArray"
+      }
+    ],
     [
       "Majorities",
       {
@@ -1362,6 +1512,16 @@
       "TakerGetsIssuer",
       {
         "nth": 4,
+        "isVLEncoded": false,
+        "isSerialized": true,
+        "isSigningField": true,
+        "type": "Hash160"
+      }
+    ],
+    [
+      "NameInDB",
+      {
+        "nth": 50,
         "isVLEncoded": false,
         "isSerialized": true,
         "isSigningField": true,
@@ -1476,16 +1636,6 @@
         "isSerialized": true,
         "isSigningField": true,
         "type": "UInt8"
-      }
-    ],
-    [
-      "DestinationNode",
-      {
-        "nth": 9,
-        "isVLEncoded": false,
-        "isSerialized": true,
-        "isSigningField": true,
-        "type": "UInt64"
       }
     ]
   ],
@@ -1605,6 +1755,9 @@
     "PaymentChannelCreate": 13,
     "PaymentChannelFund": 14,
     "PaymentChannelClaim": 15,
+    "TableListSet":21,
+    "SQLStatement":22,
+    "SQLTransaction":23,
     "Invalid": -1
   }
 }
