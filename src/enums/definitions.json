@@ -1109,6 +1109,26 @@
       }
     ],
     [
+      "TransferFeeMin",
+      {
+        "nth": 62,
+        "isVLEncoded": true,
+        "isSerialized": true,
+        "isSigningField": true,
+        "type": "Blob"
+      }
+    ],
+    [
+      "TransferFeeMax",
+      {
+        "nth": 63,
+        "isVLEncoded": true,
+        "isSerialized": true,
+        "isSigningField": true,
+        "type": "Blob"
+      }
+    ],
+    [
         "Fulfillment",
         {
             "nth": 16,

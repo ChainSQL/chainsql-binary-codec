@@ -1,6 +1,6 @@
 {
   "name": "chainsql-binary-codec",
-  "version": "0.1.30",
+  "version": "0.1.31",
   "description": "chainsql binary codec",
   "files": [
     "distrib/npm/*",
