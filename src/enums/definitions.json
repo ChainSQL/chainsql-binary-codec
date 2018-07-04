@@ -99,6 +99,16 @@
       }
     ],
     [
+      "ContractOpType",
+      {
+        "nth": 51,
+        "isVLEncoded": false,
+        "isSerialized": true,
+        "isSigningField": true,
+        "type": "UInt16"
+      }
+    ],
+    [
       "Flags",
       {
         "nth": 2,
@@ -452,6 +462,16 @@
       "FinishAfter",
       {
         "nth": 37,
+        "isVLEncoded": false,
+        "isSerialized": true,
+        "isSigningField": true,
+        "type": "UInt32"
+      }
+    ],
+    [
+      "Gas",
+      {
+        "nth": 55,
         "isVLEncoded": false,
         "isSerialized": true,
         "isSigningField": true,
@@ -849,6 +869,16 @@
       }
     ],
     [
+      "ContractValue",
+      {
+        "nth": 19,
+        "isVLEncoded": false,
+        "isSerialized": true,
+        "isSigningField": true,
+        "type": "Amount"
+      }
+    ],
+    [
       "taker_gets_funded",
       {
         "nth": 258,
@@ -1129,6 +1159,26 @@
       }
     ],
     [
+      "ContractCode",
+      {
+        "nth": 64,
+        "isVLEncoded": true,
+        "isSerialized": true,
+        "isSigningField": true,
+        "type": "Blob"
+      }
+    ],
+    [
+      "ContractData",
+      {
+        "nth": 65,
+        "isVLEncoded": true,
+        "isSerialized": true,
+        "isSigningField": true,
+        "type": "Blob"
+      }
+    ],
+    [
         "Fulfillment",
         {
             "nth": 16,
@@ -1222,6 +1272,16 @@
       "User",
       {
         "nth": 50,
+        "isVLEncoded": true,
+        "isSerialized": true,
+        "isSigningField": true,
+        "type": "AccountID"
+      }
+    ],
+    [
+      "ContractAddress",
+      {
+        "nth": 52,
         "isVLEncoded": true,
         "isSerialized": true,
         "isSigningField": true,
@@ -1768,7 +1828,7 @@
     "AccountSet": 3,
     "OfferCreate": 7,
     "SignerListSet": 12,
-    "Contract": 9,
+    "no_longer_used": 9,
     "EscrowCreate": 1,
     "EscrowFinish": 2,
     "EscrowCancel": 4,
@@ -1778,6 +1838,7 @@
     "TableListSet":21,
     "SQLStatement":22,
     "SQLTransaction":23,
+    "Contract":24,
     "Invalid": -1
   }
 }
