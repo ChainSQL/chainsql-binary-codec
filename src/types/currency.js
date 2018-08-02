@@ -68,7 +68,7 @@ const Currency = makeClass({
 
     const bytes = this._bytes;
     const length = bytes[9]? bytes[9]:3;
-    const code = slice(this._bytes, 10, 10+length, Array);
+    const code = bytes[9]? slice(this._bytes, 10, 10+length, Array) : slice(this._bytes, 12, 12+length, Array);
     const iso = code.map(c => String.fromCharCode(c)).join('');
 
     for (let i = bytes.length - 1; i >= 0; i--) {
