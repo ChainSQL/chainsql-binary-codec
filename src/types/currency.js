@@ -2,7 +2,7 @@ const _ = require('lodash');
 const makeClass = require('../utils/make-class');
 const {slice} = require('../utils/bytes-utils');
 const {Hash160} = require('./hash-160');
-const ISO_REGEX = /^[A-Z0-9]{3}$/;
+const ISO_REGEX = /^[A-Z0-9]{3,10}$/;
 const HEX_REGEX = /^[A-F0-9]{40}$/;
 
 function isoToBytes(iso) {
@@ -16,7 +16,7 @@ function isoToBytes(iso) {
 }
 
 function isISOCode(val) {
-  return val.length >= 3; // ISO_REGEX.test(val);
+  return ISO_REGEX.test(val);
 }
 
 function isHex(val) {
