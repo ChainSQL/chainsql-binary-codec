@@ -2,20 +2,21 @@ const _ = require('lodash');
 const makeClass = require('../utils/make-class');
 const {slice} = require('../utils/bytes-utils');
 const {Hash160} = require('./hash-160');
-const ISO_REGEX = /^[A-Z0-9]{3}$/;
+const ISO_REGEX = /^[A-Z0-9]{3,10}$/;
 const HEX_REGEX = /^[A-F0-9]{40}$/;
 
 function isoToBytes(iso) {
   const bytes = new Uint8Array(20);
   if (iso !== 'ZXC') {
     const isoBytes = iso.split('').map(c => c.charCodeAt(0));
-    bytes.set(isoBytes, 12);
+    bytes[9] = isoBytes.length;
+    bytes.set(isoBytes, 10);
   }
   return bytes;
 }
 
 function isISOCode(val) {
-  return val.length === 3; // ISO_REGEX.test(val);
+  return ISO_REGEX.test(val);
 }
 
 function isHex(val) {
@@ -38,7 +39,7 @@ function bytesFromRepr(val) {
   if (isValidRepr(val)) {
     // We assume at this point that we have an object with a length, either 3,
     // 20 or 40.
-    return val.length === 3 ? isoToBytes(val) : val;
+    return val.length >= 3 ? isoToBytes(val) : val;
   }
   throw new Error(`Unsupported Currency repr: ${val}`);
 }
@@ -66,11 +67,12 @@ const Currency = makeClass({
     let onlyISO = true;
 
     const bytes = this._bytes;
-    const code = slice(this._bytes, 12, 15, Array);
+    const length = bytes[9]? bytes[9]:3;
+    const code = bytes[9]? slice(this._bytes, 10, 10+length, Array) : slice(this._bytes, 12, 12+length, Array);
     const iso = code.map(c => String.fromCharCode(c)).join('');
 
     for (let i = bytes.length - 1; i >= 0; i--) {
-      if (bytes[i] !== 0 && !(i === 12 || i === 13 || i === 14)) {
+      if (bytes[i] !== 0 && !(i>=9 && i<10+length)) {
         onlyISO = false;
         break;
       }
