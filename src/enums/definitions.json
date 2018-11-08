@@ -34,7 +34,10 @@
     "DirectoryNode": 100,
     "GeneratorMap": 103,
     "Contract": 99,
-	"PayChannel": 120,
+    "PayChannel": 120,
+    "TableList":108,
+    "InsertLimt":105,
+    "ChainId":98,
     "Invalid": -1
   },
   "FIELDS": [
