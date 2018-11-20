@@ -10,6 +10,7 @@ const {Hash256} = require('./hash-256');
 const {PathSet} = require('./path-set');
 const {STArray} = require('./st-array');
 const {STObject} = require('./st-object');
+const {STEntry} = require('./st_entry');
 const {UInt16} = require('./uint-16');
 const {UInt32} = require('./uint-32');
 const {UInt64} = require('./uint-64');
@@ -27,6 +28,7 @@ const coreTypes = {
   PathSet,
   STArray,
   STObject,
+  STEntry,
   UInt8,
   UInt16,
   UInt32,

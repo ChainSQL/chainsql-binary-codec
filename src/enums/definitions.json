@@ -5,6 +5,7 @@
     "Hash128": 4,
     "Blob": 7,
     "AccountID": 8,
+    "STEntry": 9,
     "Amount": 6,
     "Hash256": 5,
     "UInt8": 16,
@@ -242,9 +243,39 @@
       }
     ],
     [
+      "TxnLgrSeq",
+      {
+        "nth": 50,
+        "isVLEncoded": false,
+        "isSerialized": true,
+        "isSigningField": true,
+        "type": "UInt32"
+      }
+    ],
+    [
+      "CreateLgrSeq",
+      {
+        "nth": 51,
+        "isVLEncoded": false,
+        "isSerialized": true,
+        "isSigningField": true,
+        "type": "UInt32"
+      }
+    ],
+    [
       "NeedVerify",
       {
         "nth": 52,
+        "isVLEncoded": false,
+        "isSerialized": true,
+        "isSigningField": true,
+        "type": "UInt32"
+      }
+    ],
+    [
+      "Gas",
+      {
+        "nth": 55,
         "isVLEncoded": false,
         "isSerialized": true,
         "isSigningField": true,
@@ -722,6 +753,86 @@
       }
     ],
     [
+      "PrevTxnLedgerHash",
+      {
+        "nth": 50,
+        "isVLEncoded": false,
+        "isSerialized": false,
+        "isSigningField": false,
+        "type": "Hash256"
+      }
+    ],
+    [
+      "TxnLedgerHash",
+      {
+        "nth": 51,
+        "isVLEncoded": false,
+        "isSerialized": false,
+        "isSigningField": false,
+        "type": "Hash256"
+      }
+    ],
+    [
+      "TxCheckHash",
+      {
+        "nth": 52,
+        "isVLEncoded": false,
+        "isSerialized": false,
+        "isSigningField": false,
+        "type": "Hash256"
+      }
+    ],
+    [
+      "CreatedLedgerHash",
+      {
+        "nth": 53,
+        "isVLEncoded": false,
+        "isSerialized": false,
+        "isSigningField": false,
+        "type": "Hash256"
+      }
+    ],
+    [
+      "CreatedTxnHash",
+      {
+        "nth": 54,
+        "isVLEncoded": false,
+        "isSerialized": false,
+        "isSigningField": false,
+        "type": "Hash256"
+      }
+    ],
+    [
+      "CurTxHash",
+      {
+        "nth": 55,
+        "isVLEncoded": false,
+        "isSerialized": false,
+        "isSigningField": false,
+        "type": "Hash256"
+      }
+    ],
+    [
+      "FutureTxHash",
+      {
+        "nth": 56,
+        "isVLEncoded": false,
+        "isSerialized": false,
+        "isSigningField": false,
+        "type": "Hash256"
+      }
+    ],
+    [
+      "ChainId",
+      {
+        "nth": 57,
+        "isVLEncoded": false,
+        "isSerialized": false,
+        "isSigningField": false,
+        "type": "Hash256"
+      }
+    ],
+    [
       "hash",
       {
         "nth": 257,
@@ -1142,6 +1253,56 @@
       }
     ],
     [
+      "InsertRule",
+      {
+        "nth": 57,
+        "isVLEncoded": true,
+        "isSerialized": true,
+        "isSigningField": true,
+        "type": "Blob"
+      }
+    ],
+    [
+      "UpdateRule",
+      {
+        "nth": 58,
+        "isVLEncoded": true,
+        "isSerialized": true,
+        "isSigningField": true,
+        "type": "Blob"
+      }
+    ],
+    [
+      "DeleteRule",
+      {
+        "nth": 59,
+        "isVLEncoded": true,
+        "isSerialized": true,
+        "isSigningField": true,
+        "type": "Blob"
+      }
+    ],
+    [
+      "GetRule",
+      {
+        "nth": 60,
+        "isVLEncoded": true,
+        "isSerialized": true,
+        "isSigningField": true,
+        "type": "Blob"
+      }
+    ],
+    [
+      "InsertCountMap",
+      {
+        "nth": 61,
+        "isVLEncoded": true,
+        "isSerialized": true,
+        "isSigningField": true,
+        "type": "Blob"
+      }
+    ],
+    [
       "TransferFeeMin",
       {
         "nth": 62,
@@ -1175,6 +1336,16 @@
       "ContractData",
       {
         "nth": 65,
+        "isVLEncoded": true,
+        "isSerialized": true,
+        "isSigningField": true,
+        "type": "Blob"
+      }
+    ],
+    [
+      "ContractTxs",
+      {
+        "nth": 66,
         "isVLEncoded": true,
         "isSerialized": true,
         "isSigningField": true,
@@ -1412,6 +1583,16 @@
       }
     ],
     [
+      "Rule",
+      {
+        "nth": 51,
+        "isVLEncoded": false,
+        "isSerialized": true,
+        "isSigningField": true,
+        "type": "STObject"
+      }
+    ],
+    [
       "Signer",
       {
         "nth": 16,
@@ -1429,6 +1610,16 @@
         "isSerialized": true,
         "isSigningField": true,
         "type": "STObject"
+      }
+    ],
+    [
+      "Entry",
+      {
+        "nth": 1,
+        "isVLEncoded": false,
+        "isSerialized": true,
+        "isSigningField": true,
+        "type": "STEntry"
       }
     ],
     [
@@ -1511,10 +1702,30 @@
         "type": "STArray"
       }
     ],
+  [
+    "TableEntries",
+    {
+      "nth": 50,
+      "isVLEncoded": false,
+      "isSerialized": true,
+      "isSigningField": true,
+      "type": "STArray"
+    }
+  ],
 	[
       "Tables",
       {
         "nth": 51,
+        "isVLEncoded": false,
+        "isSerialized": true,
+        "isSigningField": true,
+        "type": "STArray"
+      }
+    ],
+    [
+      "Users",
+      {
+        "nth": 52,
         "isVLEncoded": false,
         "isSerialized": true,
         "isSigningField": true,
