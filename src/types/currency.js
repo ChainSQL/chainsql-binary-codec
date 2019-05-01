@@ -56,7 +56,7 @@ const Currency = makeClass({
       return val instanceof this ? val : new this(bytesFromRepr(val));
     }
   },
-  Currency(bytes) {
+  Currency: function Currency(bytes) {
     Hash160.call(this, bytes);
     this.classify();
   },
