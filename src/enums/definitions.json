@@ -1363,6 +1363,16 @@
       }
     ],
     [
+      "TxsHashFillField",
+      {
+        "nth": 68,
+        "isVLEncoded": true,
+        "isSerialized": true,
+        "isSigningField": true,
+        "type": "Blob"
+      }
+    ],
+    [
         "Fulfillment",
         {
             "nth": 16,
