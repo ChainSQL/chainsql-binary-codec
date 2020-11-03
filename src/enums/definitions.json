@@ -753,6 +753,16 @@
       }
     ],
     [
+      "SchemaID",
+      {
+        "nth": 25,
+        "isVLEncoded": false,
+        "isSerialized": true,
+        "isSigningField": true,
+        "type": "Hash256"
+      }
+    ],
+    [
       "PrevTxnLedgerHash",
       {
         "nth": 50,
@@ -826,6 +836,16 @@
       "ChainId",
       {
         "nth": 57,
+        "isVLEncoded": false,
+        "isSerialized": false,
+        "isSigningField": false,
+        "type": "Hash256"
+      }
+    ],
+    [
+      "AnchorLedgerHash",
+      {
+        "nth": 58,
         "isVLEncoded": false,
         "isSerialized": false,
         "isSigningField": false,
@@ -1363,9 +1383,29 @@
       }
     ],
     [
-      "TxsHashFillField",
+      "SchemaName",
       {
         "nth": 68,
+        "isVLEncoded": true,
+        "isSerialized": true,
+        "isSigningField": true,
+        "type": "Blob"
+      }
+    ],
+    [
+      "Endpoint",
+      {
+        "nth": 69,
+        "isVLEncoded": true,
+        "isSerialized": true,
+        "isSigningField": true,
+        "type": "Blob"
+      }
+    ],
+    [
+      "TxsHashFillField",
+      {
+        "nth": 70,
         "isVLEncoded": true,
         "isSerialized": true,
         "isSigningField": true,
@@ -1476,6 +1516,16 @@
       "ContractAddress",
       {
         "nth": 52,
+        "isVLEncoded": true,
+        "isSerialized": true,
+        "isSigningField": true,
+        "type": "AccountID"
+      }
+    ],
+    [
+      "SchemaAdmin",
+      {
+        "nth": 53,
         "isVLEncoded": true,
         "isSerialized": true,
         "isSigningField": true,
@@ -1633,6 +1683,26 @@
       }
     ],
     [
+      "Validator",
+      {
+        "nth": 51,
+        "isVLEncoded": false,
+        "isSerialized": true,
+        "isSigningField": true,
+        "type": "STObject"
+      }
+    ],
+    [
+      "Peer",
+      {
+        "nth": 52,
+        "isVLEncoded": false,
+        "isSerialized": true,
+        "isSigningField": true,
+        "type": "STObject"
+      }
+    ],
+    [
       "Entry",
       {
         "nth": 1,
@@ -1753,6 +1823,26 @@
       }
     ],
     [
+      "Validators",
+      {
+        "nth": 53,
+        "isVLEncoded": false,
+        "isSerialized": true,
+        "isSigningField": true,
+        "type": "STArray"
+      }
+    ],
+    [
+      "PeerList",
+      {
+        "nth": 54,
+        "isVLEncoded": false,
+        "isSerialized": true,
+        "isSigningField": true,
+        "type": "STArray"
+      }
+    ],
+    [
       "Majorities",
       {
         "nth": 16,
@@ -1786,6 +1876,16 @@
       "TransactionResult",
       {
         "nth": 3,
+        "isVLEncoded": false,
+        "isSerialized": true,
+        "isSigningField": true,
+        "type": "UInt8"
+      }
+    ],
+    [
+      "SchemaStrategy",
+      {
+        "nth": 17,
         "isVLEncoded": false,
         "isSerialized": true,
         "isSigningField": true,
@@ -2073,6 +2173,8 @@
     "SQLStatement":22,
     "SQLTransaction":23,
     "Contract":24,
+    "SchemaCreate":25,
+    "SchemaModify":26,
     "Invalid": -1
   }
 }
