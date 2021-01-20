@@ -847,8 +847,8 @@
       {
         "nth": 58,
         "isVLEncoded": false,
-        "isSerialized": false,
-        "isSigningField": false,
+        "isSerialized": true,
+        "isSigningField": true,
         "type": "Hash256"
       }
     ],
