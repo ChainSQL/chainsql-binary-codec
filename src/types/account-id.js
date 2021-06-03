@@ -9,9 +9,15 @@ const AccountID = makeClass({
   inherits: Hash160,
   statics: {
     from(value) {
-      return value instanceof this ? value :
-              /^z/.test(value) ? this.fromBase58(value) :
-                    new this(value);
+        if(value instanceof this) return value;
+        else {
+            if(typeof(value) == "object" && 
+                Object.prototype.toString.call(value).toLowerCase() == "[object object]" &&
+                !value.length) {
+                value = value.User;
+            }
+            return /^z/.test(value) ? this.fromBase58(value) : new this(value);
+        }
     },
     cache: {},
     fromCache(base58) {
