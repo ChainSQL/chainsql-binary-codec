@@ -1673,6 +1673,16 @@
       }
     ],
     [
+      "WhiteList",
+      {
+        "nth": 52,
+        "isVLEncoded": false,
+        "isSerialized": true,
+        "isSigningField": true,
+        "type": "STObject"
+      }
+    ],
+    [
       "Majority",
       {
         "nth": 18,
@@ -1846,6 +1856,16 @@
       "Majorities",
       {
         "nth": 16,
+        "isVLEncoded": false,
+        "isSerialized": true,
+        "isSigningField": true,
+        "type": "STArray"
+      }
+    ],
+    [
+      "WhiteLists",
+      {
+        "nth": 53,
         "isVLEncoded": false,
         "isSerialized": true,
         "isSigningField": true,
