@@ -83,7 +83,7 @@ const Enums = transformWith(makeEnums, {
     initVals: enums.TRANSACTION_TYPES, ordinalByteWidth: 2
   },
   TransactionResult: {
-    initVals: enums.TRANSACTION_RESULTS, ordinalByteWidth: 1
+    initVals: enums.TRANSACTION_RESULTS, ordinalByteWidth: 2
   }
 });
 
