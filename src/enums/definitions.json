@@ -1642,7 +1642,27 @@
         "type": "STObject"
       }
     ],
-	[
+    [
+      "Signer",
+      {
+        "nth": 16,
+        "isVLEncoded": false,
+        "isSerialized": true,
+        "isSigningField": true,
+        "type": "STObject"
+      }
+    ],
+    [
+      "Majority",
+      {
+        "nth": 18,
+        "isVLEncoded": false,
+        "isSerialized": true,
+        "isSigningField": true,
+        "type": "STObject"
+      }
+    ],
+    [
       "Table",
       {
         "nth": 50,
@@ -1663,9 +1683,19 @@
       }
     ],
     [
-      "Signer",
+      "Validator",
       {
-        "nth": 16,
+        "nth": 52,
+        "isVLEncoded": false,
+        "isSerialized": true,
+        "isSigningField": true,
+        "type": "STObject"
+      }
+    ],
+    [
+      "Peer",
+      {
+        "nth": 53,
         "isVLEncoded": false,
         "isSerialized": true,
         "isSigningField": true,
@@ -1676,36 +1706,6 @@
       "WhiteList",
       {
         "nth": 54,
-        "isVLEncoded": false,
-        "isSerialized": true,
-        "isSigningField": true,
-        "type": "STObject"
-      }
-    ],
-    [
-      "Majority",
-      {
-        "nth": 18,
-        "isVLEncoded": false,
-        "isSerialized": true,
-        "isSigningField": true,
-        "type": "STObject"
-      }
-    ],
-    [
-      "Validator",
-      {
-        "nth": 51,
-        "isVLEncoded": false,
-        "isSerialized": true,
-        "isSigningField": true,
-        "type": "STObject"
-      }
-    ],
-    [
-      "Peer",
-      {
-        "nth": 52,
         "isVLEncoded": false,
         "isSerialized": true,
         "isSigningField": true,
@@ -2247,6 +2247,10 @@
     "tefMISMATCH_TRANSACTION_ADDRESS":356,
     "tefWHITELIST_ACCOUNTIDEXIST":357,
     "tefWHITELIST_NOACCOUNTID":358,
+    "tefACCOUNT_FORBIDDEN":359,
+    "tefACCOUNT_FROZEN":360,
+    "tefACCOUNT_NOT_FROZEN":361,
+    "tefNO_ADMIN_CONFIGURED":362,
     "telLOCAL_ERROR":400,
     "telBAD_DOMAIN":401,
     "telBAD_PATH_COUNT":402,
