@@ -1413,6 +1413,26 @@
       }
     ],
     [
+      "LedgerSeqField",
+      {
+        "nth": 76,
+        "isVLEncoded": true,
+        "isSerialized": true,
+        "isSigningField": true,
+        "type": "Blob"
+      }
+    ],
+    [
+      "LedgerTimeField",
+      {
+        "nth": 77,
+        "isVLEncoded": true,
+        "isSerialized": true,
+        "isSigningField": true,
+        "type": "Blob"
+      }
+    ],
+    [
         "Fulfillment",
         {
             "nth": 16,
@@ -1706,6 +1726,16 @@
       "WhiteList",
       {
         "nth": 54,
+        "isVLEncoded": false,
+        "isSerialized": true,
+        "isSigningField": true,
+        "type": "STObject"
+      }
+    ],
+    [
+      "Frozen",
+      {
+        "nth": 55,
         "isVLEncoded": false,
         "isSerialized": true,
         "isSigningField": true,
