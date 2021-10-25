@@ -1744,6 +1744,16 @@
       }
     ],
     [
+      "TableEntry",
+      {
+        "nth": 56,
+        "isVLEncoded": false,
+        "isSerialized": true,
+        "isSigningField": true,
+        "type": "STObject"
+      }
+    ],    
+    [
       "Entry",
       {
         "nth": 1,
