@@ -2292,6 +2292,7 @@
     "tefACCOUNT_FROZEN":360,
     "tefACCOUNT_NOT_FROZEN":361,
     "tefNO_ADMIN_CONFIGURED":362,
+    "tefNO_NEED_AUTHORIZE":363,
     "telLOCAL_ERROR":400,
     "telBAD_DOMAIN":401,
     "telBAD_PATH_COUNT":402,
@@ -2333,6 +2334,9 @@
     "Contract":24,
     "SchemaCreate":25,
     "SchemaModify":26,
+    "FreezeAccount":27,
+    "SchemaDelete":28,
+    "Authorize":29,
     "Invalid": -1
   }
 }
