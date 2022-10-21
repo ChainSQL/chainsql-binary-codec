@@ -47,6 +47,7 @@
     "Admin":65,
     "FrozenAccounts":122,
     "SchemaIndex":107,
+    "TableGrant":71,
     "Statis":73,
     "Invalid": -1
   },
@@ -2345,6 +2346,7 @@
     "FreezeAccount":27,
     "SchemaDelete":28,
     "Authorize":29,
+    "EthTx":31,
     "Invalid": -1
   }
 }
